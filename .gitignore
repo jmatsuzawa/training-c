@@ -1,2 +1,6 @@
 *.o
 opencv_sample/sample_convert
+*.cgi
+*.swp
+line_trace/line_trace
+pwm4gpio/pwm4gpio

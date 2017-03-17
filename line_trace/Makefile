@@ -3,7 +3,7 @@ OBJS = line_trace.o
 
 CROSS_COMPILE ?= arm-linux-gnueabihf-
 CC = $(CROSS_COMPILE)g++
-CFLAGS = -Wall -Wextra -O3
+CXXFLAGS = -Wall -Wextra -O3 -std=c++0x
 
 LDLIBS := -lopencv_core -lopencv_highgui -lopencv_imgproc -lm
 
@@ -12,7 +12,7 @@ LDLIBS := -lopencv_core -lopencv_highgui -lopencv_imgproc -lm
 all: $(EXEC)
 
 $(EXEC): $(OBJS)
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(OBJS) $(LDLIBS)
+	$(CC) $(CXXFLAGS) $(LDFLAGS) -o $@ $(OBJS) $(LDLIBS)
 
 romfs:
 	$(ROMFSINST) /usr/bin/$(EXEC)
@@ -22,4 +22,4 @@ clean:
 
 .SUFFIXES: .cpp .o
 .cpp.o:
-	$(CC) $(CFLAGS) -c $<
+	$(CC) $(CXXFLAGS) -c $<

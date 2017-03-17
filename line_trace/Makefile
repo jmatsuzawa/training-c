@@ -3,9 +3,9 @@ OBJS = line_trace.o
 
 CROSS_COMPILE ?= arm-linux-gnueabihf-
 CC = $(CROSS_COMPILE)g++
-CXXFLAGS = -Wall -Wextra -O3 -std=c++0x
+CXXFLAGS = -Wall -Wextra -O3
 
-LDLIBS := -lopencv_core -lopencv_highgui -lopencv_imgproc -lm
+LDLIBS := -lopencv_core -lopencv_highgui -lopencv_imgproc -lm -lpthread
 
 .PHONY: all romfs clean
 
